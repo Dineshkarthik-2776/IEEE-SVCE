@@ -1,0 +1,144 @@
+.crew-section {
+  padding: 3rem 1rem;
+  background: #0f0f0f;
+  color: #fff;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+.year-toggle {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.year-btn {
+  background: #1a1a1a;
+  border: 1px solid #ffffff22;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.year-btn.active,
+.year-btn:hover {
+  background: #3a3a3a;
+}
+
+.crew-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: all 0.5s ease;
+}
+
+.crew-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.crew-card {
+  position: relative;
+  background: #1a1a1a;
+  border-radius: 16px;
+  padding: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 20px #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 220px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.crew-card:hover {
+  transform: scale(1.03);
+}
+
+.crew-card .photo {
+  width: 120px;
+  height: 120px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  border: 3px solid #fff;
+}
+
+.crew-card h3 {
+  margin: 0.5rem 0 0.2rem;
+  font-size: 1.2rem;
+}
+
+.crew-card p {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* Glow animation */
+.glow-border {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border-radius: 16px;
+  pointer-events: none;
+  border: 2px solid transparent;
+  background: linear-gradient(45deg, #00f0ff, #ff00f0, #00f0ff) border-box;
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: glowMove 3s linear infinite;
+}
+
+@keyframes glowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+/* Note for no data */
+.no-data-note {
+  margin-top: 1rem;
+  color: #888;
+  font-style: italic;
+}
+
+/* ========== MOBILE SLIDER ========== */
+@media (max-width: 600px) {
+  .crew-section {
+    overflow-x: visible;
+  }
+
+  .crew-row {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding: 1rem 1rem 2rem 1rem;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .crew-row::-webkit-scrollbar {
+    display: none;
+  }
+
+  .crew-card {
+    flex: 0 0 80%;
+    scroll-snap-align: start;
+    opacity: 1;
+    transform: none;
+  }
+}

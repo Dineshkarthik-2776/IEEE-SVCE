@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.join{
+      background-color: #111;
+      color: #fff;
+      height: 100vh;
+}
+
+.joinh3{
+    text-align: center;
+    margin-top: 6rem;
+    color: #6900ff;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 2rem;
+}
+.joinh1{
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 2.5rem;
+}
+
+.join-us {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #111;
+}
+
+.card {
+  position: relative; /* Needed for pseudo-element */
+  overflow: hidden;   /* Hide the reflection outside */
+  flex: 1 1 300px;
+  max-width: 350px;
+  background-color: #1a1a1a;
+  color: #fff;
+  border: 1px solid #ffffff22;
+  border-radius: 8px;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+  transform: translateX(-100%) rotate(25deg);
+  transition: transform 0.6s ease-in-out;
+  pointer-events: none; /* Don't interfere with click */
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card:hover::before {
+  transform: translateX(100%) rotate(25deg);
+}
+
+
+.card h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+.card ul {
+  padding-left: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card ul li {
+  list-style: circle;
+  margin-bottom: 0.75rem;
+  line-height: 1.5rem;
+}
+
+.card button {
+  align-self: center;
+  background-color: #6900ff;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.2rem;
+  font-weight: bold;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.card button:hover {
+  background-color: #4e00cc;
+}
+
+/* 💡 Mobile tweaks */
+@media (max-width: 768px) {
+  .join-us {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .card {
+    width: 100%;
+    max-width: 90%;
+  }
+}

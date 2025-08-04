@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+.header {
+  position: fixed;
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 1.3rem;
+  padding: 0.4rem 0px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 999;
+  background: rgba(0, 98, 155, 0.8);
+  backdrop-filter: blur(1rem);
+  border: 0.1rem solid black;
+  color: black;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  border-radius: 1rem;
+}
+
+.logo img{
+    width: 11rem;
+}
+
+.nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.nav li {
+  cursor: pointer;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 0.25rem;
+  transition: color 0.3s ease;
+  color:  #ffdcdc;
+}
+
+.nav li::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: black;
+  transition: width 0.3s ease;
+}
+
+.nav li:hover {
+  color: black;
+}
+
+.nav li:hover::after {
+  width: 100%;
+}
+
+
+
+.hamburger {
+  display: none; /* Hide by default */
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #ffdcdc;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex; /* Default to flex for desktop */
+}
+
+.nav.open {
+  display: block; /* Show as block when open */
+}
+
+@media (max-width: 768px) {
+  .nav {
+    display: none; /* Hide nav by default on mobile */
+    flex-direction: column; /* Stack items vertically */
+    position: absolute;
+    top: 60px; /* Adjust based on header height */
+    left: 0;
+    right: 0;
+    background: rgba(0, 98, 155, 0.8);
+    border-radius: 0 0 1rem 1rem;
+    z-index: 999;
+  }
+
+  .nav.open {
+    display: flex; /* Show nav when open */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger on mobile */
+  }
+}
