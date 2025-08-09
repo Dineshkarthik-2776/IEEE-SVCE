@@ -26,7 +26,6 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 2rem;
-  padding: 2rem;
   background-color: #111;
 }
 
@@ -39,7 +38,7 @@
   color: #fff;
   border: 1px solid #ffffff22;
   border-radius: 8px;
-  padding: 2rem 1.5rem;
+  padding: 2rem 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -83,6 +82,7 @@
 .card ul {
   padding-left: 1rem;
   margin-bottom: 2rem;
+  overflow: hidden;
 }
 
 .card ul li {
@@ -119,5 +119,10 @@
   .card {
     width: 100%;
     max-width: 90%;
+  }
+
+
+  .join{
+    height: auto;
   }
 }

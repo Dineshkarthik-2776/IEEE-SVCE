@@ -27,7 +27,7 @@ const About = () => {
   }, []);
 
   return (
-    <section style={{ height: '100vh' }} className="abt">
+    <section className="abt">
       <h1 ref={textRef} className={`hero ${animate ? 'typewriter-text' : ''}`}>
         ABOUT US
       </h1>
